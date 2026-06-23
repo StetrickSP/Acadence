@@ -26,7 +26,13 @@ export function SignIn() {
           </div>
         }
       >
-        <form className="space-y-4">
+        <form
+          className="space-y-4"
+          onSubmit={(e) => {
+            e.preventDefault()
+            navigate('/dashboard')
+          }}
+        >
           <div className="space-y-2">
             <label htmlFor="email" className="text-sm font-medium">
               Email
@@ -49,11 +55,9 @@ export function SignIn() {
               required
             />
           </div>
-          <Link to="/dashboard">
-            <Button type="button" className="w-full">
-              Sign In
-            </Button>
-          </Link>
+          <Button type="submit" className="w-full">
+            Sign In
+          </Button>
         </form>
       </AuthCard>
     </AuthLayout>
