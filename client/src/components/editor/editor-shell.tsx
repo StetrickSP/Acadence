@@ -11,7 +11,7 @@ export function EditorShell({ children }: EditorShellProps) {
   const [sidebarOpen, setSidebarOpen] = useState(false)
 
   const handleToggleSidebar = () => {
-    setSidebarOpen(!sidebarOpen)
+    setSidebarOpen((prev) => !prev)
   }
 
   const handleCloseSidebar = () => {
