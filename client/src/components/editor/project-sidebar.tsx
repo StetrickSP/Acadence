@@ -22,13 +22,15 @@ export function ProjectSidebar({ isOpen, onClose }: ProjectSidebarProps) {
 
       {/* Sidebar */}
       <aside
+        aria-hidden={!isOpen}
+        inert={!isOpen ? "" : undefined}
         className={cn(
           "fixed left-0 top-14 bottom-0 z-40",
           "w-80 bg-card border-r border-border",
           "flex flex-col",
           "transition-transform duration-300 ease-in-out",
           "shadow-lg",
-          isOpen ? "translate-x-0" : "-translate-x-full"
+          isOpen ? "translate-x-0" : "-translate-x-full pointer-events-none"
         )}
       >
         {/* Header */}
